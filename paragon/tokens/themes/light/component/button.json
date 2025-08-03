@@ -1,0 +1,77 @@
+{
+  "component": {
+    "button": {
+      "primary": {
+        "background": {
+          "$value": "{color.brand.base}",
+          "$type": "color",
+          "$description": "Primary button background color"
+        },
+        "backgroundHover": {
+          "$value": "{color.brand.600}",
+          "$type": "color",
+          "$description": "Primary button hover background color"
+        },
+        "text": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$description": "Primary button text color"
+        },
+        "border": {
+          "$value": "{color.brand.base}",
+          "$type": "color",
+          "$description": "Primary button border color"
+        }
+      },
+      "secondary": {
+        "background": {
+          "$value": "transparent",
+          "$type": "color",
+          "$description": "Secondary button background color"
+        },
+        "backgroundHover": {
+          "$value": "{color.brand.100}",
+          "$type": "color",
+          "$description": "Secondary button hover background color"
+        },
+        "text": {
+          "$value": "{color.brand.base}",
+          "$type": "color",
+          "$description": "Secondary button text color"
+        },
+        "border": {
+          "$value": "{color.brand.base}",
+          "$type": "color",
+          "$description": "Secondary button border color"
+        }
+      },
+      "padding": {
+        "y": {
+          "$value": "{spacing.3}",
+          "$type": "dimension",
+          "$description": "Button vertical padding"
+        },
+        "x": {
+          "$value": "{spacing.6}",
+          "$type": "dimension",
+          "$description": "Button horizontal padding"
+        }
+      },
+      "borderRadius": {
+        "$value": "{borderRadius.lg}",
+        "$type": "dimension",
+        "$description": "Button border radius"
+      },
+      "fontSize": {
+        "$value": "{typography.fontSize.base}",
+        "$type": "dimension",
+        "$description": "Button font size"
+      },
+      "fontWeight": {
+        "$value": "{typography.fontWeight.medium}",
+        "$type": "fontWeight",
+        "$description": "Button font weight"
+      }
+    }
+  }
+}

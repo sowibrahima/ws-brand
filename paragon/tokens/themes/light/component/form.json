@@ -1,0 +1,96 @@
+{
+  "component": {
+    "form": {
+      "input": {
+        "background": {
+          "$value": "#ffffff",
+          "$type": "color",
+          "$description": "Form input background color"
+        },
+        "border": {
+          "$value": "#d1d5db",
+          "$type": "color",
+          "$description": "Form input border color"
+        },
+        "borderFocus": {
+          "$value": "{color.brand.base}",
+          "$type": "color",
+          "$description": "Form input focus border color"
+        },
+        "text": {
+          "$value": "#111827",
+          "$type": "color",
+          "$description": "Form input text color"
+        },
+        "placeholder": {
+          "$value": "#6b7280",
+          "$type": "color",
+          "$description": "Form input placeholder color"
+        },
+        "padding": {
+          "y": {
+            "$value": "{spacing.3}",
+            "$type": "dimension",
+            "$description": "Form input vertical padding"
+          },
+          "x": {
+            "$value": "{spacing.4}",
+            "$type": "dimension",
+            "$description": "Form input horizontal padding"
+          }
+        },
+        "borderRadius": {
+          "$value": "{borderRadius.lg}",
+          "$type": "dimension",
+          "$description": "Form input border radius"
+        },
+        "fontSize": {
+          "$value": "{typography.fontSize.base}",
+          "$type": "dimension",
+          "$description": "Form input font size"
+        }
+      },
+      "label": {
+        "text": {
+          "$value": "#374151",
+          "$type": "color",
+          "$description": "Form label text color"
+        },
+        "fontSize": {
+          "$value": "{typography.fontSize.sm}",
+          "$type": "dimension",
+          "$description": "Form label font size"
+        },
+        "fontWeight": {
+          "$value": "{typography.fontWeight.medium}",
+          "$type": "fontWeight",
+          "$description": "Form label font weight"
+        }
+      },
+      "error": {
+        "text": {
+          "$value": "#dc2626",
+          "$type": "color",
+          "$description": "Form error text color"
+        },
+        "border": {
+          "$value": "#dc2626",
+          "$type": "color",
+          "$description": "Form error border color"
+        }
+      },
+      "success": {
+        "text": {
+          "$value": "#059669",
+          "$type": "color",
+          "$description": "Form success text color"
+        },
+        "border": {
+          "$value": "#059669",
+          "$type": "color",
+          "$description": "Form success border color"
+        }
+      }
+    }
+  }
+}
