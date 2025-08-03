@@ -1,0 +1,110 @@
+{
+  "$type": "color",
+  "color": {
+    "brand": {
+      "base": {
+        "$value": "#570808",
+        "source": "$brand",
+        "$description": "Primary brand color - deep burgundy red."
+      },
+      "100": {
+        "$value": "#f5e6e6",
+        "source": "$brand-100",
+        "$description": "Brand color of level 100 - lightest tint.",
+        "modify": [
+          {
+            "type": "lighten",
+            "amount": 0.45
+          }
+        ]
+      },
+      "200": {
+        "$value": "#e6b3b3",
+        "source": "$brand-200",
+        "$description": "Brand color of level 200 - very light tint.",
+        "modify": [
+          {
+            "type": "lighten",
+            "amount": 0.35
+          }
+        ]
+      },
+      "300": {
+        "$value": "#d18080",
+        "source": "$brand-300",
+        "$description": "Brand color of level 300 - light tint.",
+        "modify": [
+          {
+            "type": "lighten",
+            "amount": 0.25
+          }
+        ]
+      },
+      "400": {
+        "$value": "#b84d4d",
+        "source": "$brand-400",
+        "$description": "Brand color of level 400 - medium tint.",
+        "modify": [
+          {
+            "type": "lighten",
+            "amount": 0.15
+          }
+        ]
+      },
+      "500": {
+        "$value": "{color.brand.base}",
+        "source": "$brand-500",
+        "$description": "Brand color of level 500 - base color."
+      },
+      "600": {
+        "$value": "#4d0707",
+        "source": "$brand-600",
+        "$description": "Brand color of level 600 - dark shade.",
+        "modify": [
+          {
+            "type": "darken",
+            "amount": 0.1
+          }
+        ]
+      },
+      "700": {
+        "$value": "#420606",
+        "source": "$brand-700",
+        "$description": "Brand color of level 700 - darker shade.",
+        "modify": [
+          {
+            "type": "darken",
+            "amount": 0.2
+          }
+        ]
+      },
+      "800": {
+        "$value": "#380505",
+        "source": "$brand-800",
+        "$description": "Brand color of level 800 - very dark shade.",
+        "modify": [
+          {
+            "type": "darken",
+            "amount": 0.3
+          }
+        ]
+      },
+      "900": {
+        "$value": "#2d0404",
+        "source": "$brand-900",
+        "$description": "Brand color of level 900 - darkest shade.",
+        "modify": [
+          {
+            "type": "darken",
+            "amount": 0.4
+          }
+        ]
+      }
+    },
+    "primary": {
+      "$value": "{color.brand.base}",
+      "source": "$primary",
+      "$description": "Primary action color - references brand base."
+    }
+  }
+}
