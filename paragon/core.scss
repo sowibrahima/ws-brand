@@ -1,4 +1,24 @@
-// this file creates the core.css import here all the common styles for your theme. 
+// this file creates the core.css import here all the common styles for your theme.
 
+// Import fonts first (Google Fonts and font variables)
+@import './fonts';
+
+// Import variables (colors, spacing, etc.)
+@import './variables';
+
+// Import Paragon core styles
 // @use "./build/core/variables";
 // @use "./build/core/custom-media-breakpoints";
+
+// Import our custom overrides after Paragon styles
+@import './overrides';
+
+// Import utility components and classes
+@import './utilities';
+
+// Import MFE-specific overrides
+@import './mfe-overrides/authn';
+@import './mfe-overrides/learner-dashboard';
+@import './mfe-overrides/course';
+@import './mfe-overrides/profile';
+@import './mfe-overrides/account';

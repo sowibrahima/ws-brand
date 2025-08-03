@@ -1,0 +1,577 @@
+// ========================================
+// FRONTEND-APP-PROFILE MFE MODERNIZATION
+// ========================================
+
+// Modern profile page with your brand colors
+// This file targets the frontend-app-profile MFE
+
+// ========================================
+// PROFILE CONTAINER
+// ========================================
+
+.profile-page {
+  background: linear-gradient(135deg, 
+    rgba($brand-primary, 0.02) 0%, 
+    rgba($brand-secondary, 0.02) 100%);
+  min-height: 100vh;
+  font-family: $font-family-base;
+  padding: 2rem 0;
+}
+
+// ========================================
+// PROFILE HEADER
+// ========================================
+
+.profile-header {
+  background: white;
+  border-radius: $border-radius-2xl;
+  box-shadow: $box-shadow-lg;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(135deg, $brand-primary 0%, darken($brand-primary, 10%) 100%);
+    z-index: 1;
+  }
+  
+  .profile-avatar-section {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    
+    .avatar-container {
+      position: relative;
+      
+      .profile-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: $box-shadow-lg;
+        background: linear-gradient(135deg, $brand-secondary, lighten($brand-secondary, 10%));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size-4xl;
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      
+      .avatar-edit-button {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        background: $brand-primary;
+        border: 3px solid white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+          background: darken($brand-primary, 10%);
+          transform: scale(1.1);
+        }
+      }
+    }
+    
+    .profile-info {
+      flex: 1;
+      color: white;
+      
+      .profile-name {
+        font-size: $font-size-3xl;
+        font-weight: $font-weight-bold;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(black, 0.1);
+      }
+      
+      .profile-username {
+        font-size: $font-size-lg;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+      }
+      
+      .profile-stats {
+        display: flex;
+        gap: 2rem;
+        
+        .stat-item {
+          text-align: center;
+          
+          .stat-number {
+            font-size: $font-size-2xl;
+            font-weight: $font-weight-bold;
+            color: $brand-secondary;
+            display: block;
+          }
+          
+          .stat-label {
+            font-size: $font-size-sm;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+          }
+        }
+      }
+    }
+  }
+  
+  .profile-actions {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 1rem;
+    
+    .btn {
+      padding: 0.75rem 2rem;
+      font-weight: $font-weight-semibold;
+      border-radius: $border-radius-lg;
+    }
+  }
+}
+
+// ========================================
+// PROFILE CONTENT TABS
+// ========================================
+
+.profile-content {
+  .nav-tabs {
+    background: white;
+    border-radius: $border-radius-xl;
+    box-shadow: $box-shadow;
+    padding: 0.5rem;
+    border: none;
+    margin-bottom: 2rem;
+    
+    .nav-item {
+      .nav-link {
+        border: none;
+        border-radius: $border-radius-lg;
+        color: $gray-600;
+        font-weight: $font-weight-medium;
+        padding: 1rem 2rem;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+          background: $gray-50;
+          color: $brand-primary;
+        }
+        
+        &.active {
+          background: $brand-primary;
+          color: white;
+          box-shadow: $box-shadow-md;
+        }
+      }
+    }
+  }
+  
+  .tab-content {
+    .tab-pane {
+      background: white;
+      border-radius: $border-radius-xl;
+      box-shadow: $box-shadow;
+      padding: 2rem;
+    }
+  }
+}
+
+// ========================================
+// PROFILE FORMS
+// ========================================
+
+.profile-form {
+  .form-section {
+    margin-bottom: 3rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid $gray-100;
+      
+      .section-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        background: rgba($brand-primary, 0.1);
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $brand-primary;
+      }
+      
+      .section-title {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        margin: 0;
+      }
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      
+      &.single-column {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .form-group {
+      .form-label {
+        font-weight: $font-weight-semibold;
+        color: $gray-800;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        .required-indicator {
+          color: $danger;
+        }
+      }
+      
+      .form-control {
+        height: 3rem;
+        padding: 0.75rem 1rem;
+        border: 2px solid $gray-200;
+        border-radius: $border-radius;
+        font-family: $font-family-base;
+        transition: all 0.2s ease-in-out;
+        
+        &:focus {
+          border-color: $brand-primary;
+          box-shadow: 0 0 0 3px rgba($brand-primary, 0.1);
+        }
+        
+        &.is-invalid {
+          border-color: $danger;
+          
+          &:focus {
+            box-shadow: 0 0 0 3px rgba($danger, 0.1);
+          }
+        }
+      }
+      
+      .form-text {
+        color: $gray-600;
+        font-size: $font-size-sm;
+        margin-top: 0.5rem;
+      }
+      
+      .invalid-feedback {
+        color: $danger;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid $gray-200;
+    
+    .btn {
+      padding: 0.75rem 2rem;
+      font-weight: $font-weight-semibold;
+      border-radius: $border-radius;
+    }
+  }
+}
+
+// ========================================
+// ACHIEVEMENTS SECTION
+// ========================================
+
+.achievements-section {
+  .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    
+    .achievement-card {
+      background: white;
+      border-radius: $border-radius-xl;
+      box-shadow: $box-shadow;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      border: 2px solid transparent;
+      
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: $box-shadow-xl;
+        border-color: rgba($brand-primary, 0.2);
+      }
+      
+      &.earned {
+        background: linear-gradient(135deg, 
+          rgba($brand-secondary, 0.05) 0%, 
+          rgba($brand-secondary, 0.1) 100%);
+        border-color: $brand-secondary;
+      }
+      
+      .achievement-icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: $font-size-2xl;
+        
+        &.earned {
+          background: linear-gradient(135deg, $brand-secondary, lighten($brand-secondary, 10%));
+          color: $gray-900;
+        }
+        
+        &.locked {
+          background: $gray-200;
+          color: $gray-500;
+        }
+      }
+      
+      .achievement-title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        margin-bottom: 0.5rem;
+      }
+      
+      .achievement-description {
+        color: $gray-600;
+        font-size: $font-size-sm;
+        line-height: $line-height-relaxed;
+        margin-bottom: 1rem;
+      }
+      
+      .achievement-date {
+        color: $brand-primary;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+// ========================================
+// CERTIFICATES SECTION
+// ========================================
+
+.certificates-section {
+  .certificate-list {
+    .certificate-item {
+      background: white;
+      border-radius: $border-radius-xl;
+      box-shadow: $box-shadow;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      transition: all 0.3s ease-in-out;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: $box-shadow-lg;
+      }
+      
+      .certificate-icon {
+        width: 4rem;
+        height: 4rem;
+        background: linear-gradient(135deg, $brand-primary, darken($brand-primary, 10%));
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: $font-size-xl;
+        flex-shrink: 0;
+      }
+      
+      .certificate-info {
+        flex: 1;
+        
+        .certificate-title {
+          font-size: $font-size-xl;
+          font-weight: $font-weight-bold;
+          color: $gray-900;
+          margin-bottom: 0.5rem;
+        }
+        
+        .certificate-course {
+          color: $brand-primary;
+          font-weight: $font-weight-medium;
+          margin-bottom: 0.5rem;
+        }
+        
+        .certificate-date {
+          color: $gray-600;
+          font-size: $font-size-sm;
+        }
+      }
+      
+      .certificate-actions {
+        display: flex;
+        gap: 1rem;
+        
+        .btn {
+          padding: 0.5rem 1.5rem;
+          font-size: $font-size-sm;
+          font-weight: $font-weight-medium;
+          border-radius: $border-radius;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 1rem 0;
+  }
+  
+  .profile-header {
+    padding: 2rem 1.5rem;
+    
+    .profile-avatar-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      
+      .profile-stats {
+        justify-content: center;
+      }
+    }
+    
+    .profile-actions {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+  
+  .profile-content {
+    .nav-tabs {
+      .nav-item .nav-link {
+        padding: 0.75rem 1rem;
+        font-size: $font-size-sm;
+      }
+    }
+    
+    .tab-content .tab-pane {
+      padding: 1.5rem;
+    }
+  }
+  
+  .profile-form {
+    .form-row {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .form-actions {
+      flex-direction: column;
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  
+  .achievements-section {
+    .achievement-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+  
+  .certificates-section {
+    .certificate-list .certificate-item {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+      
+      .certificate-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+// ========================================
+// ACCESSIBILITY ENHANCEMENTS
+// ========================================
+
+.form-control:focus,
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .form-control,
+  .btn {
+    border-width: 3px;
+  }
+  
+  .achievement-card,
+  .certificate-item {
+    border-width: 3px;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .profile-header,
+  .achievement-card,
+  .certificate-item,
+  .form-control,
+  .btn {
+    transition: none;
+  }
+}

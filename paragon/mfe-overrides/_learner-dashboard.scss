@@ -1,0 +1,344 @@
+// ========================================
+// FRONTEND-APP-LEARNER-DASHBOARD MFE MODERNIZATION
+// ========================================
+
+// Modern learner dashboard with your brand colors
+// This file targets the frontend-app-learner-dashboard MFE
+
+// ========================================
+// DASHBOARD LAYOUT
+// ========================================
+
+.dashboard-container {
+  background: linear-gradient(135deg, 
+    rgba($brand-primary, 0.02) 0%, 
+    rgba($brand-secondary, 0.02) 100%);
+  min-height: 100vh;
+  font-family: $font-family-base;
+}
+
+// Dashboard header
+.dashboard-header {
+  background: white;
+  box-shadow: $box-shadow-sm;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    color: $brand-primary;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-3xl;
+    margin-bottom: 0.5rem;
+  }
+  
+  .welcome-message {
+    color: $gray-600;
+    font-size: $font-size-lg;
+  }
+}
+
+// ========================================
+// COURSE CARDS
+// ========================================
+
+.course-card {
+  background: white;
+  border-radius: $border-radius-xl;
+  box-shadow: $box-shadow;
+  border: 1px solid $gray-200;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow-xl;
+    border-color: rgba($brand-primary, 0.2);
+  }
+  
+  .course-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+    
+    .course-status {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: $border-radius-pill;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      
+      &.in-progress {
+        background: rgba($brand-secondary, 0.9);
+        color: $gray-900;
+      }
+      
+      &.completed {
+        background: rgba($success, 0.9);
+        color: white;
+      }
+      
+      &.not-started {
+        background: rgba($gray-600, 0.9);
+        color: white;
+      }
+    }
+  }
+  
+  .course-content {
+    padding: 1.5rem;
+    
+    .course-title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      margin-bottom: 0.75rem;
+      line-height: $line-height-tight;
+    }
+    
+    .course-org {
+      color: $brand-primary;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    
+    .course-description {
+      color: $gray-600;
+      font-size: $font-size-base;
+      line-height: $line-height-relaxed;
+      margin-bottom: 1rem;
+    }
+    
+    .progress-bar {
+      height: 8px;
+      background: $gray-200;
+      border-radius: $border-radius-pill;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      
+      .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, $brand-primary, $brand-secondary);
+        border-radius: $border-radius-pill;
+        transition: width 0.3s ease-in-out;
+      }
+    }
+    
+    .course-actions {
+      display: flex;
+      gap: 0.75rem;
+      
+      .btn {
+        flex: 1;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+// ========================================
+// PROGRAM CARDS
+// ========================================
+
+.program-card {
+  background: linear-gradient(135deg, 
+    rgba($brand-primary, 0.05) 0%, 
+    rgba($brand-secondary, 0.05) 100%);
+  border: 2px solid transparent;
+  border-radius: $border-radius-2xl;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    border-color: rgba($brand-primary, 0.3);
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-lg;
+  }
+  
+  .program-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $brand-secondary;
+    color: $gray-900;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius-pill;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1rem;
+  }
+  
+  .program-title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $brand-primary;
+    margin-bottom: 1rem;
+  }
+  
+  .program-progress {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    
+    .progress-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: conic-gradient(
+        $brand-primary 0deg,
+        $brand-primary var(--progress, 0deg),
+        $gray-200 var(--progress, 0deg)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      
+      &::before {
+        content: '';
+        width: 44px;
+        height: 44px;
+        background: white;
+        border-radius: 50%;
+        position: absolute;
+      }
+      
+      .progress-text {
+        position: relative;
+        font-weight: $font-weight-bold;
+        color: $brand-primary;
+        font-size: $font-size-sm;
+      }
+    }
+    
+    .progress-details {
+      .courses-completed {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $gray-900;
+      }
+      
+      .courses-total {
+        color: $gray-600;
+        font-size: $font-size-sm;
+      }
+    }
+  }
+}
+
+// ========================================
+// DASHBOARD SIDEBAR
+// ========================================
+
+.dashboard-sidebar {
+  background: white;
+  border-radius: $border-radius-xl;
+  box-shadow: $box-shadow;
+  padding: 2rem;
+  
+  .sidebar-section {
+    margin-bottom: 2rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .section-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      margin-bottom: 1rem;
+    }
+    
+    .section-content {
+      .metric {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid $gray-100;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        .metric-label {
+          color: $gray-600;
+          font-size: $font-size-sm;
+        }
+        
+        .metric-value {
+          font-weight: $font-weight-bold;
+          color: $brand-primary;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1.5rem 0;
+    
+    h1 {
+      font-size: $font-size-2xl;
+    }
+    
+    .welcome-message {
+      font-size: $font-size-base;
+    }
+  }
+  
+  .course-card {
+    .course-image {
+      height: 160px;
+    }
+    
+    .course-content {
+      padding: 1rem;
+      
+      .course-actions {
+        flex-direction: column;
+      }
+    }
+  }
+  
+  .program-card {
+    padding: 1.5rem;
+    
+    .program-title {
+      font-size: $font-size-xl;
+    }
+  }
+  
+  .dashboard-sidebar {
+    margin-top: 2rem;
+  }
+}

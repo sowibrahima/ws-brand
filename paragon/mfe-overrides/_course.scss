@@ -1,0 +1,495 @@
+// ========================================
+// FRONTEND-APP-LEARNING MFE MODERNIZATION
+// ========================================
+
+// Modern course learning experience with your brand colors
+// This file targets the frontend-app-learning MFE
+
+// ========================================
+// COURSE HEADER
+// ========================================
+
+.course-header {
+  background: linear-gradient(135deg, $brand-primary 0%, darken($brand-primary, 10%) 100%);
+  color: white;
+  padding: 3rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+  }
+  
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .course-title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+    line-height: $line-height-tight;
+  }
+  
+  .course-org {
+    color: rgba(white, 0.9);
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    margin-bottom: 2rem;
+  }
+  
+  .course-progress {
+    background: rgba(white, 0.1);
+    border-radius: $border-radius-pill;
+    padding: 1rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .progress-bar {
+      width: 200px;
+      height: 8px;
+      background: rgba(white, 0.2);
+      border-radius: $border-radius-pill;
+      overflow: hidden;
+      
+      .progress-fill {
+        height: 100%;
+        background: $brand-secondary;
+        border-radius: $border-radius-pill;
+        transition: width 0.3s ease-in-out;
+      }
+    }
+    
+    .progress-text {
+      font-weight: $font-weight-semibold;
+      white-space: nowrap;
+    }
+  }
+}
+
+// ========================================
+// COURSE NAVIGATION
+// ========================================
+
+.course-navigation {
+  background: white;
+  box-shadow: $box-shadow-sm;
+  border-bottom: 1px solid $gray-200;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .nav-tabs {
+    border: none;
+    padding: 0 2rem;
+    
+    .nav-item {
+      .nav-link {
+        border: none;
+        color: $gray-600;
+        font-weight: $font-weight-medium;
+        padding: 1.5rem 2rem;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+          color: $brand-primary;
+          background: transparent;
+        }
+        
+        &.active {
+          color: $brand-primary;
+          background: transparent;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: $brand-primary;
+            border-radius: 2px 2px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// COURSE CONTENT
+// ========================================
+
+.course-content {
+  padding: 2rem 0;
+  
+  .unit-container {
+    background: white;
+    border-radius: $border-radius-xl;
+    box-shadow: $box-shadow;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    
+    .unit-header {
+      background: $gray-50;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid $gray-200;
+      
+      .unit-title {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        margin-bottom: 0.5rem;
+      }
+      
+      .unit-description {
+        color: $gray-600;
+        font-size: $font-size-base;
+      }
+    }
+    
+    .unit-content {
+      padding: 2rem;
+      
+      // Video player styling
+      .video-player {
+        border-radius: $border-radius-lg;
+        overflow: hidden;
+        box-shadow: $box-shadow-md;
+        margin-bottom: 2rem;
+        
+        .video-controls {
+          background: linear-gradient(135deg, $brand-primary 0%, darken($brand-primary, 5%) 100%);
+          color: white;
+          padding: 1rem;
+          
+          .play-button {
+            background: rgba(white, 0.2);
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease-in-out;
+            
+            &:hover {
+              background: rgba(white, 0.3);
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+      
+      // Text content styling
+      .text-content {
+        font-family: $font-family-base;
+        line-height: $line-height-relaxed;
+        color: $gray-800;
+        
+        h1, h2, h3, h4, h5, h6 {
+          color: $brand-primary;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        
+        p {
+          margin-bottom: 1.5rem;
+        }
+        
+        blockquote {
+          border-left: 4px solid $brand-secondary;
+          background: rgba($brand-secondary, 0.05);
+          padding: 1.5rem;
+          margin: 2rem 0;
+          border-radius: 0 $border-radius $border-radius 0;
+          font-style: italic;
+        }
+        
+        code {
+          background: $gray-100;
+          color: $brand-primary;
+          padding: 0.25rem 0.5rem;
+          border-radius: $border-radius-sm;
+          font-family: $font-family-monospace;
+        }
+        
+        pre {
+          background: $gray-900;
+          color: $gray-100;
+          padding: 1.5rem;
+          border-radius: $border-radius-lg;
+          overflow-x: auto;
+          margin: 2rem 0;
+          
+          code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// COURSE SIDEBAR
+// ========================================
+
+.course-sidebar {
+  .sequence-navigation {
+    background: white;
+    border-radius: $border-radius-xl;
+    box-shadow: $box-shadow;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    
+    .sequence-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      margin-bottom: 1rem;
+    }
+    
+    .sequence-list {
+      .sequence-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: $border-radius;
+        transition: all 0.2s ease-in-out;
+        margin-bottom: 0.5rem;
+        
+        &:hover {
+          background: $gray-50;
+        }
+        
+        &.active {
+          background: rgba($brand-primary, 0.1);
+          border-left: 4px solid $brand-primary;
+        }
+        
+        .sequence-icon {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: $font-size-sm;
+          font-weight: $font-weight-bold;
+          
+          &.completed {
+            background: $success;
+            color: white;
+          }
+          
+          &.current {
+            background: $brand-primary;
+            color: white;
+          }
+          
+          &.locked {
+            background: $gray-300;
+            color: $gray-600;
+          }
+        }
+        
+        .sequence-title {
+          font-size: $font-size-base;
+          font-weight: $font-weight-medium;
+          color: $gray-800;
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  .course-tools {
+    background: white;
+    border-radius: $border-radius-xl;
+    box-shadow: $box-shadow;
+    padding: 1.5rem;
+    
+    .tools-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      margin-bottom: 1rem;
+    }
+    
+    .tool-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: $border-radius;
+      transition: all 0.2s ease-in-out;
+      margin-bottom: 0.5rem;
+      color: $gray-700;
+      text-decoration: none;
+      
+      &:hover {
+        background: $gray-50;
+        color: $brand-primary;
+        text-decoration: none;
+      }
+      
+      .tool-icon {
+        width: 2rem;
+        height: 2rem;
+        background: rgba($brand-primary, 0.1);
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $brand-primary;
+      }
+      
+      .tool-name {
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+}
+
+// ========================================
+// DISCUSSION FORUM
+// ========================================
+
+.discussion-container {
+  .discussion-post {
+    background: white;
+    border-radius: $border-radius-xl;
+    box-shadow: $box-shadow;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      
+      .user-avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, $brand-primary, $brand-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: $font-weight-bold;
+      }
+      
+      .post-meta {
+        .username {
+          font-weight: $font-weight-bold;
+          color: $gray-900;
+        }
+        
+        .post-date {
+          color: $gray-600;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+    
+    .post-content {
+      color: $gray-800;
+      line-height: $line-height-relaxed;
+      margin-bottom: 1.5rem;
+    }
+    
+    .post-actions {
+      display: flex;
+      gap: 1rem;
+      
+      .action-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius;
+        border: 1px solid $gray-300;
+        background: white;
+        color: $gray-600;
+        font-size: $font-size-sm;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+          border-color: $brand-primary;
+          color: $brand-primary;
+        }
+        
+        &.active {
+          background: $brand-primary;
+          border-color: $brand-primary;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media (max-width: 768px) {
+  .course-header {
+    padding: 2rem 0 1.5rem;
+    
+    .course-title {
+      font-size: $font-size-2xl;
+    }
+    
+    .course-progress {
+      .progress-bar {
+        width: 150px;
+      }
+    }
+  }
+  
+  .course-navigation {
+    .nav-tabs {
+      padding: 0 1rem;
+      
+      .nav-item .nav-link {
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+  
+  .course-content {
+    padding: 1rem 0;
+    
+    .unit-container {
+      .unit-header,
+      .unit-content {
+        padding: 1.5rem;
+      }
+    }
+  }
+  
+  .course-sidebar {
+    margin-top: 2rem;
+  }
+}

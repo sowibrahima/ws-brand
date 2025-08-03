@@ -1,0 +1,678 @@
+// ========================================
+// FRONTEND-APP-ACCOUNT MFE MODERNIZATION
+// ========================================
+
+// Modern account settings with your brand colors
+// This file targets the frontend-app-account MFE
+
+// ========================================
+// ACCOUNT SETTINGS LAYOUT
+// ========================================
+
+.account-settings-page {
+  background: linear-gradient(135deg, 
+    rgba($brand-primary, 0.02) 0%, 
+    rgba($brand-secondary, 0.02) 100%);
+  min-height: 100vh;
+  font-family: $font-family-base;
+  padding: 2rem 0;
+}
+
+.account-settings-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+// ========================================
+// ACCOUNT SIDEBAR NAVIGATION
+// ========================================
+
+.account-nav {
+  background: white;
+  border-radius: $border-radius-xl;
+  box-shadow: $box-shadow;
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+  
+  .nav-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $gray-100;
+    
+    .user-avatar {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $brand-primary, $brand-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      margin: 0 auto 1rem;
+      box-shadow: $box-shadow-md;
+    }
+    
+    .user-name {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      margin-bottom: 0.25rem;
+    }
+    
+    .user-email {
+      color: $gray-600;
+      font-size: $font-size-sm;
+    }
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    .nav-item {
+      margin-bottom: 0.5rem;
+      
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: $border-radius;
+        color: $gray-700;
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover {
+          background: $gray-50;
+          color: $brand-primary;
+          text-decoration: none;
+        }
+        
+        &.active {
+          background: rgba($brand-primary, 0.1);
+          color: $brand-primary;
+          border-left: 4px solid $brand-primary;
+          margin-left: -1rem;
+          padding-left: 1.75rem;
+        }
+        
+        .nav-icon {
+          width: 1.25rem;
+          height: 1.25rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .nav-text {
+          flex: 1;
+        }
+        
+        .nav-badge {
+          background: $brand-secondary;
+          color: $gray-900;
+          font-size: $font-size-sm;
+          font-weight: $font-weight-bold;
+          padding: 0.25rem 0.5rem;
+          border-radius: $border-radius-pill;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// ACCOUNT CONTENT AREA
+// ========================================
+
+.account-content {
+  background: white;
+  border-radius: $border-radius-xl;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+  
+  .content-header {
+    background: linear-gradient(135deg, 
+      rgba($brand-primary, 0.05) 0%, 
+      rgba($brand-secondary, 0.05) 100%);
+    padding: 2rem;
+    border-bottom: 1px solid $gray-200;
+    
+    .header-title {
+      font-size: $font-size-2xl;
+      font-weight: $font-weight-bold;
+      color: $gray-900;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-description {
+      color: $gray-600;
+      font-size: $font-size-base;
+      line-height: $line-height-relaxed;
+    }
+  }
+  
+  .content-body {
+    padding: 2rem;
+  }
+}
+
+// ========================================
+// ACCOUNT SETTINGS FORMS
+// ========================================
+
+.settings-form {
+  .form-section {
+    margin-bottom: 3rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      
+      .section-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        background: rgba($brand-primary, 0.1);
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $brand-primary;
+      }
+      
+      .section-info {
+        flex: 1;
+        
+        .section-title {
+          font-size: $font-size-xl;
+          font-weight: $font-weight-bold;
+          color: $gray-900;
+          margin-bottom: 0.25rem;
+        }
+        
+        .section-description {
+          color: $gray-600;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      
+      &.single-column {
+        grid-template-columns: 1fr;
+      }
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+    
+    .form-group {
+      margin-bottom: 2rem;
+      
+      .form-label {
+        font-weight: $font-weight-semibold;
+        color: $gray-800;
+        margin-bottom: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        .required-indicator {
+          color: $danger;
+        }
+        
+        .help-icon {
+          color: $gray-400;
+          cursor: help;
+          
+          &:hover {
+            color: $brand-primary;
+          }
+        }
+      }
+      
+      .form-control {
+        height: 3rem;
+        padding: 0.75rem 1rem;
+        border: 2px solid $gray-200;
+        border-radius: $border-radius;
+        font-family: $font-family-base;
+        transition: all 0.2s ease-in-out;
+        
+        &:focus {
+          border-color: $brand-primary;
+          box-shadow: 0 0 0 3px rgba($brand-primary, 0.1);
+        }
+        
+        &.is-valid {
+          border-color: $success;
+          background-color: rgba($success, 0.05);
+        }
+        
+        &.is-invalid {
+          border-color: $danger;
+          background-color: rgba($danger, 0.05);
+        }
+      }
+      
+      .form-select {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 0.75rem center;
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        padding-right: 2.5rem;
+      }
+      
+      .form-text {
+        color: $gray-600;
+        font-size: $font-size-sm;
+        margin-top: 0.5rem;
+        line-height: $line-height-relaxed;
+      }
+      
+      .valid-feedback {
+        color: $success-dark;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        margin-top: 0.5rem;
+      }
+      
+      .invalid-feedback {
+        color: $danger-dark;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        margin-top: 0.5rem;
+      }
+    }
+    
+    .form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid $gray-200;
+      
+      .btn {
+        padding: 0.75rem 2rem;
+        font-weight: $font-weight-semibold;
+        border-radius: $border-radius;
+      }
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// PRIVACY SETTINGS
+// ========================================
+
+.privacy-settings {
+  .privacy-option {
+    background: $gray-50;
+    border-radius: $border-radius-lg;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      border-color: rgba($brand-primary, 0.2);
+    }
+    
+    &.active {
+      background: rgba($brand-primary, 0.05);
+      border-color: $brand-primary;
+    }
+    
+    .option-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      
+      .option-title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-semibold;
+        color: $gray-900;
+      }
+      
+      .form-switch {
+        .form-check-input {
+          width: 3rem;
+          height: 1.5rem;
+          background-color: $gray-300;
+          border: none;
+          border-radius: $border-radius-pill;
+          transition: all 0.2s ease-in-out;
+          
+          &:checked {
+            background-color: $brand-primary;
+            border-color: $brand-primary;
+          }
+          
+          &:focus {
+            box-shadow: 0 0 0 3px rgba($brand-primary, 0.2);
+          }
+        }
+      }
+    }
+    
+    .option-description {
+      color: $gray-600;
+      font-size: $font-size-sm;
+      line-height: $line-height-relaxed;
+    }
+  }
+}
+
+// ========================================
+// NOTIFICATION SETTINGS
+// ========================================
+
+.notification-settings {
+  .notification-category {
+    margin-bottom: 2rem;
+    
+    .category-header {
+      background: $gray-50;
+      padding: 1rem 1.5rem;
+      border-radius: $border-radius-lg;
+      margin-bottom: 1rem;
+      
+      .category-title {
+        font-size: $font-size-lg;
+        font-weight: $font-weight-bold;
+        color: $gray-900;
+        margin-bottom: 0.25rem;
+      }
+      
+      .category-description {
+        color: $gray-600;
+        font-size: $font-size-sm;
+      }
+    }
+    
+    .notification-list {
+      .notification-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid $gray-100;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        .notification-info {
+          flex: 1;
+          
+          .notification-title {
+            font-weight: $font-weight-medium;
+            color: $gray-900;
+            margin-bottom: 0.25rem;
+          }
+          
+          .notification-description {
+            color: $gray-600;
+            font-size: $font-size-sm;
+          }
+        }
+        
+        .notification-controls {
+          display: flex;
+          gap: 1rem;
+          
+          .form-check {
+            margin: 0;
+            
+            .form-check-input {
+              margin: 0;
+              
+              &[type="checkbox"] {
+                border-radius: $border-radius-sm;
+                
+                &:checked {
+                  background-color: $brand-primary;
+                  border-color: $brand-primary;
+                }
+              }
+            }
+            
+            .form-check-label {
+              font-size: $font-size-sm;
+              color: $gray-600;
+              margin-left: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// SECURITY SETTINGS
+// ========================================
+
+.security-settings {
+  .security-item {
+    background: white;
+    border: 2px solid $gray-200;
+    border-radius: $border-radius-lg;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      border-color: rgba($brand-primary, 0.3);
+    }
+    
+    &.secure {
+      border-color: $success;
+      background: rgba($success, 0.02);
+      
+      .security-icon {
+        background: $success;
+        color: white;
+      }
+    }
+    
+    &.warning {
+      border-color: $warning;
+      background: rgba($warning, 0.02);
+      
+      .security-icon {
+        background: $warning;
+        color: white;
+      }
+    }
+    
+    .security-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      
+      .security-icon {
+        width: 3rem;
+        height: 3rem;
+        background: $brand-primary;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: $font-size-lg;
+      }
+      
+      .security-info {
+        flex: 1;
+        
+        .security-title {
+          font-size: $font-size-xl;
+          font-weight: $font-weight-bold;
+          color: $gray-900;
+          margin-bottom: 0.25rem;
+        }
+        
+        .security-status {
+          font-size: $font-size-sm;
+          font-weight: $font-weight-medium;
+          
+          &.secure {
+            color: $success-dark;
+          }
+          
+          &.warning {
+            color: $warning-dark;
+          }
+        }
+      }
+      
+      .security-actions {
+        .btn {
+          padding: 0.5rem 1.5rem;
+          font-size: $font-size-sm;
+          font-weight: $font-weight-medium;
+          border-radius: $border-radius;
+        }
+      }
+    }
+    
+    .security-description {
+      color: $gray-600;
+      line-height: $line-height-relaxed;
+      margin-bottom: 1rem;
+    }
+    
+    .security-details {
+      background: $gray-50;
+      border-radius: $border-radius;
+      padding: 1rem;
+      
+      .detail-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid $gray-200;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        .detail-label {
+          color: $gray-600;
+          font-size: $font-size-sm;
+        }
+        
+        .detail-value {
+          font-weight: $font-weight-medium;
+          color: $gray-900;
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+}
+
+// ========================================
+// RESPONSIVE DESIGN
+// ========================================
+
+@media (max-width: 768px) {
+  .account-settings-page {
+    padding: 1rem 0;
+  }
+  
+  .account-nav {
+    position: static;
+    margin-bottom: 1rem;
+    
+    .nav-header {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    .nav-list .nav-item .nav-link {
+      padding: 0.75rem;
+      
+      &.active {
+        margin-left: 0;
+        padding-left: 0.75rem;
+        border-left: none;
+        border-bottom: 3px solid $brand-primary;
+      }
+    }
+  }
+  
+  .account-content {
+    .content-header {
+      padding: 1.5rem;
+      
+      .header-title {
+        font-size: $font-size-xl;
+      }
+    }
+    
+    .content-body {
+      padding: 1.5rem;
+    }
+  }
+  
+  .security-settings {
+    .security-item {
+      padding: 1.5rem;
+      
+      .security-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        
+        .security-actions {
+          width: 100%;
+          
+          .btn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
