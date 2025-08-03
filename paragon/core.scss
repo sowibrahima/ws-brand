@@ -3,12 +3,15 @@
 // Import fonts first (Google Fonts and font variables)
 @import './fonts';
 
-// Import variables (colors, spacing, etc.)
+// Import Paragon core variables BEFORE our custom variables
+// This ensures all Bootstrap/Paragon base variables are available
+@import '~@edx/paragon/scss/core/variables';
+
+// Import variables (colors, spacing, etc.) - our custom variables override Paragon defaults
 @import './variables';
 
-// Import Paragon core styles
-// @use "./build/core/variables";
-// @use "./build/core/custom-media-breakpoints";
+// Import Paragon core styles and breakpoints
+@import '~@edx/paragon/scss/core/custom-media-breakpoints';
 
 // Import our custom overrides after Paragon styles
 @import './overrides';
