@@ -1,2 +1,198 @@
 // Use this file to set SASS variables for @edx/paragon
 // See _variables.scss in https://github.com/openedx/paragon/blob/master/scss/core/ for reference
+
+// ========================================
+// BRAND COLORS
+// ========================================
+
+// Primary brand color - deep burgundy red
+$brand-primary: #570808 !default;
+$brand-secondary: #D4AF37 !default; // Golden yellow complement
+
+// Brand color variations
+$brand-100: #f5e6e6 !default;
+$brand-200: #e6b3b3 !default;
+$brand-300: #d18080 !default;
+$brand-400: #b84d4d !default;
+$brand-500: $brand-primary !default;
+$brand-600: #4d0707 !default;
+$brand-700: #420606 !default;
+$brand-800: #380505 !default;
+$brand-900: #2d0404 !default;
+
+// ========================================
+// TYPOGRAPHY
+// ========================================
+
+// Font families
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-sans-serif: $font-family-base !default;
+$font-family-monospace: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', Menlo, Consolas, 'Courier New', monospace !default;
+
+// Font sizes
+$font-size-xs: 0.75rem !default;   // 12px
+$font-size-sm: 0.875rem !default;  // 14px
+$font-size-base: 1rem !default;    // 16px
+$font-size-lg: 1.125rem !default;  // 18px
+$font-size-xl: 1.25rem !default;   // 20px
+$font-size-2xl: 1.5rem !default;   // 24px
+$font-size-3xl: 1.875rem !default; // 30px
+$font-size-4xl: 2.25rem !default;  // 36px
+$font-size-5xl: 3rem !default;     // 48px
+
+// Font weights
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-extra-bold: 800 !default;
+
+// Line heights
+$line-height-tight: 1.25 !default;
+$line-height-snug: 1.375 !default;
+$line-height-normal: 1.5 !default;
+$line-height-relaxed: 1.625 !default;
+$line-height-loose: 2 !default;
+
+// ========================================
+// COLORS
+// ========================================
+
+// Gray scale
+$white: #ffffff !default;
+$gray-50: #f9fafb !default;
+$gray-100: #f3f4f6 !default;
+$gray-200: #e5e7eb !default;
+$gray-300: #d1d5db !default;
+$gray-400: #9ca3af !default;
+$gray-500: #6b7280 !default;
+$gray-600: #4b5563 !default;
+$gray-700: #374151 !default;
+$gray-800: #1f2937 !default;
+$gray-900: #111827 !default;
+$black: #000000 !default;
+
+// Semantic colors
+$success: #10b981 !default;
+$success-light: #d1fae5 !default;
+$success-dark: #047857 !default;
+
+$warning: #f59e0b !default;
+$warning-light: #fef3c7 !default;
+$warning-dark: #d97706 !default;
+
+$danger: #ef4444 !default;
+$danger-light: #fee2e2 !default;
+$danger-dark: #dc2626 !default;
+
+$info: #3b82f6 !default;
+$info-light: #dbeafe !default;
+$info-dark: #1d4ed8 !default;
+
+// ========================================
+// SPACING
+// ========================================
+
+$spacer: 1rem !default;
+$spacing-0: 0 !default;
+$spacing-1: 0.25rem !default;  // 4px
+$spacing-2: 0.5rem !default;   // 8px
+$spacing-3: 0.75rem !default;  // 12px
+$spacing-4: 1rem !default;     // 16px
+$spacing-5: 1.25rem !default;  // 20px
+$spacing-6: 1.5rem !default;   // 24px
+$spacing-8: 2rem !default;     // 32px
+$spacing-10: 2.5rem !default;  // 40px
+$spacing-12: 3rem !default;    // 48px
+$spacing-16: 4rem !default;    // 64px
+$spacing-20: 5rem !default;    // 80px
+$spacing-24: 6rem !default;    // 96px
+
+// ========================================
+// BORDER RADIUS
+// ========================================
+
+$border-radius-sm: 0.125rem !default;  // 2px
+$border-radius: 0.25rem !default;      // 4px
+$border-radius-md: 0.375rem !default;  // 6px
+$border-radius-lg: 0.5rem !default;    // 8px
+$border-radius-xl: 0.75rem !default;   // 12px
+$border-radius-2xl: 1rem !default;     // 16px
+$border-radius-3xl: 1.5rem !default;   // 24px
+$border-radius-pill: 50rem !default;   // pill shape
+
+// ========================================
+// SHADOWS
+// ========================================
+
+$box-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !default;
+$box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !default;
+$box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !default;
+$box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
+$box-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !default;
+$box-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !default;
+$box-shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06) !default;
+
+// ========================================
+// COMPONENT VARIABLES
+// ========================================
+
+// Body
+$body-bg: $white !default;
+$body-color: $gray-900 !default;
+
+// Links
+$link-color: $brand-primary !default;
+$link-decoration: none !default;
+$link-hover-color: darken($brand-primary, 15%) !default;
+$link-hover-decoration: underline !default;
+
+// Buttons
+$btn-padding-y: $spacing-3 !default;
+$btn-padding-x: $spacing-6 !default;
+$btn-font-weight: $font-weight-medium !default;
+$btn-border-radius: $border-radius-lg !default;
+$btn-border-radius-sm: $border-radius !default;
+$btn-border-radius-lg: $border-radius-xl !default;
+$btn-padding-y-sm: $spacing-2 !default;
+$btn-padding-x-sm: $spacing-4 !default;
+$btn-padding-y-lg: $spacing-4 !default;
+$btn-padding-x-lg: $spacing-8 !default;
+
+// Cards
+$card-border-radius: $border-radius-xl !default;
+$card-border-width: 1px !default;
+$card-border-color: $gray-200 !default;
+$card-box-shadow: $box-shadow !default;
+
+// Forms
+$input-border-radius: $border-radius-lg !default;
+$input-border-color: $gray-300 !default;
+$input-focus-border-color: $brand-primary !default;
+$input-focus-box-shadow: 0 0 0 3px rgba($brand-primary, 0.1) !default;
+
+// Modals
+$modal-content-border-radius: $border-radius-2xl !default;
+$modal-backdrop-bg: rgba($black, 0.5) !default;
+
+// Navigation
+$navbar-padding-y: $spacing-4 !default;
+$navbar-brand-font-size: $font-size-xl !default;
+$navbar-brand-font-weight: $font-weight-bold !default;
+
+// ========================================
+// THEME OVERRIDES
+// ========================================
+
+// Override default Paragon primary color with brand color
+$primary: $brand-primary !default;
+$secondary: $brand-secondary !default;
+
+// Text colors
+$text-muted: $gray-600 !default;
+
+// Background colors
+$bg-light: $gray-50 !default;
+$bg-dark: $gray-900 !default;
+

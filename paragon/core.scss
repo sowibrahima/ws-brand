@@ -1,4 +1,21 @@
 // this file creates the core.css import here all the common styles for your theme. 
 
-// @use "./build/core/variables";
-// @use "./build/core/custom-media-breakpoints";
+// Import variables first - MUST be before any other SCSS imports
+@import "./variables";
+
+@import "./build/core/index.css";
+
+// Define custom styles here...
+
+// Import MFE-specific overrides
+@import "./mfe-overrides/authn";
+@import "./mfe-overrides/learner-dashboard";
+@import "./mfe-overrides/course";
+@import "./mfe-overrides/profile";
+@import "./mfe-overrides/account";
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
