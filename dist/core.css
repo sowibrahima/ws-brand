@@ -693,10 +693,6 @@
 
 @custom-media --pgn-size-breakpoint-min-width-xxl (min-width: 1400px);
 
-.main-content {
-  background-color: #00FF00 !important;
-}
-
 .authn-wrapper,
 .authentication-page {
   min-height: 100vh;
